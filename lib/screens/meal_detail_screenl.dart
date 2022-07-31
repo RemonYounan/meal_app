@@ -6,7 +6,7 @@ class MealDetailScreen extends StatelessWidget {
   static const routeName = '/meal-detial';
   final Function toggleFavourite;
   final Function isFavourite;
-  MealDetailScreen(this.toggleFavourite, this.isFavourite);
+  const MealDetailScreen(this.toggleFavourite, this.isFavourite);
 
   Widget buildSectionTitle(BuildContext context, String text) {
     return Padding(

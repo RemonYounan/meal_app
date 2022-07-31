@@ -8,7 +8,7 @@ import './models/filter.dart';
 import './screens/filters_screen.dart';
 import './screens/category_meal_screen.dart';
 import './screens/meal_detail_screenl.dart';
-import './screens/tabs_screend.dart';
+import 'screens/tabs_screen.dart';
 
 void main() {
   runApp(const MyApp());

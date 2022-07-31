@@ -1,5 +1,3 @@
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
 import '../models/filter.dart';
 
@@ -8,9 +6,10 @@ import '../widgets/drawer.dart';
 class FilterScreen extends StatefulWidget {
   static const routeName = '/fliter';
 
-  Filter filter;
+  final Filter filter;
   final void Function(Filter) _savefilter;
-  FilterScreen(this.filter, this._savefilter);
+  const FilterScreen(this.filter, this._savefilter, {Key? key})
+      : super(key: key);
 
   @override
   State<FilterScreen> createState() => _FilterScreenState();
@@ -52,17 +51,18 @@ class _FilterScreenState extends State<FilterScreen> {
         title: const Text('Filter'),
         actions: [
           IconButton(
-              onPressed: () {
-                widget._savefilter(
-                  Filter(
-                    gluten: _isGlutenFree,
-                    lactose: _isLactoseFree,
-                    vegan: _isVegan,
-                    vegetaian: _isVegetarian,
-                  ),
-                );
-              },
-              icon: Icon(Icons.save))
+            onPressed: () {
+              widget._savefilter(
+                Filter(
+                  gluten: _isGlutenFree,
+                  lactose: _isLactoseFree,
+                  vegan: _isVegan,
+                  vegetaian: _isVegetarian,
+                ),
+              );
+            },
+            icon: const Icon(Icons.save),
+          ),
         ],
       ),
       drawer: const MainDrawer(),
